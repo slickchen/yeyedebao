@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面包店每日菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f8f5e6;
+            padding: 20px 5%;
+        }
+        /* 标题栏 */
+        .menu-title {
+            background-color: #e67e22;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+        }
+        /* 菜单表格 */
+        .menu-table {
+            width: 100%;
+            background-color: #fff9e6;
+            border-collapse: collapse;
+            margin: 0 auto;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-table td {
+            padding: 12px 15px;
+            border: 1px solid #f3d5a8;
+            font-size: 16px;
+        }
+        /* 价格列右对齐 */
+        .menu-table td:last-child {
+            text-align: right;
+        }
+        /* 实物图按钮 */
+        .img-btn {
+            display: block;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #e67e22;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            margin: 20px auto 0;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        /* 手机适配 */
+        @media (max-width: 500px) {
+            .menu-table td {
+                font-size: 14px;
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 标题 -->
+    <div class="menu-title">面包店每日菜单</div>
+    
+    <!-- 菜单表格 -->
+    <table class="menu-table">
+        <tr>
+            <td>淡奶牛角包</td>
+            <td>4块</td>
+            <td>全麦牛角包</td>
+            <td>4块5</td>
+        </tr>
+        <tr>
+            <td>原味甜甜圈</td>
+            <td>4块</td>
+            <td>蓝莓甜甜圈</td>
+            <td>4块5</td>
+        </tr>
+        <tr>
+            <td>澳门萝卜包</td>
+            <td>5块</td>
+            <td>紫米酱肉包</td>
+            <td>5块</td>
+        </tr>
+        <tr>
+            <td>芝士吞拿鱼</td>
+            <td>6块</td>
+            <td>沙拉肉松包</td>
+            <td>6块</td>
+        </tr>
+        <tr>
+            <td>德式肠包</td>
+            <td>6块</td>
+            <td>沙拉热狗包</td>
+            <td>7块</td>
+        </tr>
+        <tr>
+            <td>芝士火腿三明治</td>
+            <td>8块</td>
+            <td>无水鲜奶路</td>
+            <td>4块</td>
+        </tr>
+        <tr>
+            <td>无馅小面包</td>
+            <td>4块</td>
+            <td>流心金沙包</td>
+            <td>5块</td>
+        </tr>
+        <tr>
+            <td>麦麸卷</td>
+            <td>5块</td>
+            <td>黄金奶酥条</td>
+            <td>6块</td>
+        </tr>
+        <tr>
+            <td>酸奶金苹果</td>
+            <td>6块</td>
+            <td>黄金满屋流沙包</td>
+            <td>6块5</td>
+        </tr>
+        <tr>
+            <td>抹茶红豆包</td>
+            <td>7块</td>
+            <td>软香紫米包</td>
+            <td>8块</td>
+        </tr>
+        <tr>
+            <td>红豆松松吐司</td>
+            <td>9块9</td>
+            <td>鸿运葡萄红豆包</td>
+            <td>10块3个</td>
+        </tr>
+        <tr>
+            <td>手工蛋挞</td>
+            <td>5块</td>
+            <td>岩烧蛋糕</td>
+            <td>8块</td>
+        </tr>
+    </table>
+
+    <!-- 实物图按钮 -->
+    <a href="#" class="img-btn">实物图展示</a>
+</body>
+</html>
