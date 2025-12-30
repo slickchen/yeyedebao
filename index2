@@ -5,148 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>面包店每日菜单</title>
     <style>
+        /* 全局重置 - GitHub 渲染友好 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
+
         body {
             background-color: #f8f5e6;
-            padding: 20px 5%;
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        /* 标题栏 */
+
+        /* 标题样式 - 贴近原图+GitHub 视觉适配 */
         .menu-title {
             background-color: #e67e22;
-            color: white;
+            color: #ffffff;
             text-align: center;
-            padding: 15px 0;
-            font-size: 22px;
-            font-weight: bold;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
             border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
         }
-        /* 菜单表格 */
+
+        /* 菜单表格 - GitHub 渲染优化 */
         .menu-table {
             width: 100%;
             background-color: #fff9e6;
             border-collapse: collapse;
-            margin: 0 auto;
             border-radius: 0 0 8px 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
+
         .menu-table td {
-            padding: 12px 15px;
+            padding: 0.8rem 1rem;
             border: 1px solid #f3d5a8;
-            font-size: 16px;
+            font-size: 1rem;
+            line-height: 1.5;
         }
+
         /* 价格列右对齐 */
         .menu-table td:last-child {
             text-align: right;
+            font-weight: 500;
         }
-        /* 实物图按钮 */
+
+        /* 实物图按钮 - 交互优化 */
         .img-btn {
             display: block;
-            width: 150px;
-            height: 40px;
-            line-height: 40px;
+            width: 12rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
             background-color: #e67e22;
-            color: white;
+            color: #ffffff;
             text-align: center;
             border-radius: 6px;
-            margin: 20px auto 0;
+            margin: 1.5rem auto 0;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
         }
-        /* 手机适配 */
-        @media (max-width: 500px) {
+
+        .img-btn:hover {
+            background-color: #d35400;
+        }
+
+        /* 响应式适配 - 移动端优化 */
+        @media (max-width: 768px) {
             .menu-table td {
-                font-size: 14px;
-                padding: 10px 8px;
+                font-size: 0.9rem;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .menu-title {
+                font-size: 1.25rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 标题 -->
-    <div class="menu-title">面包店每日菜单</div>
+    <!-- 菜单标题 -->
+    <h1 class="menu-title">面包店每日菜单</h1>
     
     <!-- 菜单表格 -->
     <table class="menu-table">
-        <tr>
-            <td>淡奶牛角包</td>
-            <td>4块</td>
-            <td>全麦牛角包</td>
-            <td>4块5</td>
-        </tr>
-        <tr>
-            <td>原味甜甜圈</td>
-            <td>4块</td>
-            <td>蓝莓甜甜圈</td>
-            <td>4块5</td>
-        </tr>
-        <tr>
-            <td>澳门萝卜包</td>
-            <td>5块</td>
-            <td>紫米酱肉包</td>
-            <td>5块</td>
-        </tr>
-        <tr>
-            <td>芝士吞拿鱼</td>
-            <td>6块</td>
-            <td>沙拉肉松包</td>
-            <td>6块</td>
-        </tr>
-        <tr>
-            <td>德式肠包</td>
-            <td>6块</td>
-            <td>沙拉热狗包</td>
-            <td>7块</td>
-        </tr>
-        <tr>
-            <td>芝士火腿三明治</td>
-            <td>8块</td>
-            <td>无水鲜奶路</td>
-            <td>4块</td>
-        </tr>
-        <tr>
-            <td>无馅小面包</td>
-            <td>4块</td>
-            <td>流心金沙包</td>
-            <td>5块</td>
-        </tr>
-        <tr>
-            <td>麦麸卷</td>
-            <td>5块</td>
-            <td>黄金奶酥条</td>
-            <td>6块</td>
-        </tr>
-        <tr>
-            <td>酸奶金苹果</td>
-            <td>6块</td>
-            <td>黄金满屋流沙包</td>
-            <td>6块5</td>
-        </tr>
-        <tr>
-            <td>抹茶红豆包</td>
-            <td>7块</td>
-            <td>软香紫米包</td>
-            <td>8块</td>
-        </tr>
-        <tr>
-            <td>红豆松松吐司</td>
-            <td>9块9</td>
-            <td>鸿运葡萄红豆包</td>
-            <td>10块3个</td>
-        </tr>
-        <tr>
-            <td>手工蛋挞</td>
-            <td>5块</td>
-            <td>岩烧蛋糕</td>
-            <td>8块</td>
-        </tr>
+        <tbody>
+            <tr>
+                <td>淡奶牛角包</td>
+                <td>4元</td>
+                <td>全麦牛角包</td>
+                <td>4.5元</td>
+            </tr>
+            <tr>
+                <td>原味甜甜圈</td>
+                <td>4元</td>
+                <td>蓝莓甜甜圈</td>
+                <td>4.5元</td>
+            </tr>
+            <tr>
+                <td>澳门萝卜包</td>
+                <td>5元</td>
+                <td>紫米酱肉包</td>
+                <td>5元</td>
+            </tr>
+            <tr>
+                <td>芝士吞拿鱼</td>
+                <td>6元</td>
+                <td>沙拉肉松包</td>
+                <td>6元</td>
+            </tr>
+            <tr>
+                <td>德式肠包</td>
+                <td>6元</td>
+                <td>沙拉热狗包</td>
+                <td>7元</td>
+            </tr>
+            <tr>
+                <td>芝士火腿三明治</td>
+                <td>8元</td>
+                <td>无水鲜奶路</td>
+                <td>4元</td>
+            </tr>
+            <tr>
+                <td>无馅小面包</td>
+                <td>4元</td>
+                <td>流心金沙包</td>
+                <td>5元</td>
+            </tr>
+            <tr>
+                <td>麦麸卷</td>
+                <td>5元</td>
+                <td>黄金奶酥条</td>
+                <td>6元</td>
+            </tr>
+            <tr>
+                <td>酸奶金苹果</td>
+                <td>6元</td>
+                <td>黄金满屋流沙包</td>
+                <td>6.5元</td>
+            </tr>
+            <tr>
+                <td>抹茶红豆包</td>
+                <td>7元</td>
+                <td>软香紫米包</td>
+                <td>8元</td>
+            </tr>
+            <tr>
+                <td>红豆松松吐司</td>
+                <td>9.9元</td>
+                <td>鸿运葡萄红豆包</td>
+                <td>10元3个</td>
+            </tr>
+            <tr>
+                <td>手工蛋挞</td>
+                <td>5元</td>
+                <td>岩烧蛋糕</td>
+                <td>8元</td>
+            </tr>
+        </tbody>
     </table>
 
     <!-- 实物图按钮 -->
-    <a href="#" class="img-btn">实物图展示</a>
+    <a href="#food-images" class="img-btn">实物图展示</a>
+
+    <!-- 可选：实物图区域（GitHub 图片路径示例） -->
+    <div id="food-images" style="margin-top: 2rem; text-align: center; display: none;">
+        <p>可在此处添加面包实物图，GitHub 图片路径示例：</p>
+        <code>https://github.com/你的用户名/仓库名/raw/main/images/bread.jpg</code>
+    </div>
+
+    <script>
+        // 简单交互：点击按钮显示/隐藏实物图区域
+        document.querySelector('.img-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const imgArea = document.getElementById('food-images');
+            imgArea.style.display = imgArea.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
 </body>
 </html>
