@@ -86,12 +86,22 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        /* 图片容器 - 适配多图横向排列 */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem; /* 图片之间的间距 */
+            margin-top: 0.5rem;
+        }
+
         #food-images img {
             max-width: 100%; /* 适配屏幕宽度 */
             height: auto; /* 保持图片比例 */
             border-radius: 8px;
-            margin-top: 0.5rem;
-            max-height: 600px; /* 限制图片最大高度，避免溢出 */
+            max-height: 400px; /* 统一图片最大高度 */
+            flex: 1;
+            min-width: 280px; /* 移动端最小宽度，避免太窄 */
         }
 
         /* 响应式适配 - 移动端优化 */
@@ -106,7 +116,7 @@
             }
 
             #food-images img {
-                max-height: 400px; /* 移动端缩小图片最大高度 */
+                max-height: 300px; /* 移动端缩小图片最大高度 */
             }
         }
     </style>
@@ -196,11 +206,18 @@
     <!-- 实物图按钮 -->
     <a href="#food-images" class="img-btn">实物图展示</a>
 
-    <!-- 实物图区域（已添加你的GitHub图片地址） -->
+    <!-- 实物图区域（添加了指定的2个图片地址，保留原图片作为可选） -->
     <div id="food-images">
         <h3 style="color: #e67e22; margin-bottom: 0.5rem;">面包实物图</h3>
-        <!-- 核心修改：这里引用了你提供的GitHub raw图片地址 -->
-        <img src="https://github.com/slickchen/yeyedebao/raw/main/bread.jpg" alt="面包实物图">
+        <!-- 图片容器：适配多图横向排列 -->
+        <div class="img-container">
+            <!-- 原有图片（可选保留，若不需要可删除） -->
+            <img src="https://github.com/slickchen/yeyedebao/raw/main/bread.jpg" alt="面包实物图1">
+            <!-- 新增的第一个图片 -->
+            <img src="https://github.com/slickchen/yeyedebao/raw/main/bread2.jpg" alt="面包实物图2">
+            <!-- 新增的第二个图片 -->
+            <img src="https://github.com/slickchen/yeyedebao/raw/main/bread3.jpg" alt="面包实物图3">
+        </div>
     </div>
 
     <script>
