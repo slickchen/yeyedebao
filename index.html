@@ -75,6 +75,25 @@
             background-color: #d35400;
         }
 
+        /* 实物图区域样式 */
+        #food-images {
+            margin-top: 2rem;
+            text-align: center;
+            display: none; /* 默认隐藏 */
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        #food-images img {
+            max-width: 100%; /* 适配屏幕宽度 */
+            height: auto; /* 保持图片比例 */
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            max-height: 600px; /* 限制图片最大高度，避免溢出 */
+        }
+
         /* 响应式适配 - 移动端优化 */
         @media (max-width: 768px) {
             .menu-table td {
@@ -84,6 +103,10 @@
 
             .menu-title {
                 font-size: 1.25rem;
+            }
+
+            #food-images img {
+                max-height: 400px; /* 移动端缩小图片最大高度 */
             }
         }
     </style>
@@ -173,19 +196,22 @@
     <!-- 实物图按钮 -->
     <a href="#food-images" class="img-btn">实物图展示</a>
 
-    <!-- 可选：实物图区域（GitHub 图片路径示例） -->
-    <div id="food-images" style="margin-top: 2rem; text-align: center; display: none;">
-        <p>https://github.com/slickchen/yeyedebao/raw/main/bread.jpg</p>
-        <code>https://github.com/slickchen/yeyedebao/raw/main/bread.jpg</code> 
+    <!-- 实物图区域（已添加你的GitHub图片地址） -->
+    <div id="food-images">
+        <h3 style="color: #e67e22; margin-bottom: 0.5rem;">面包实物图</h3>
+        <!-- 核心修改：这里引用了你提供的GitHub raw图片地址 -->
         <img src="https://github.com/slickchen/yeyedebao/raw/main/bread.jpg" alt="面包实物图">
     </div>
 
     <script>
-        // 简单交互：点击按钮显示/隐藏实物图区域
+        // 点击按钮显示/隐藏实物图区域
         document.querySelector('.img-btn').addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // 阻止锚点默认跳转
             const imgArea = document.getElementById('food-images');
+            // 切换显示/隐藏状态
             imgArea.style.display = imgArea.style.display === 'none' ? 'block' : 'none';
+            // 切换按钮文字
+            this.textContent = imgArea.style.display === 'none' ? '实物图展示' : '收起实物图';
         });
     </script>
 </body>
